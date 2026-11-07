@@ -9,8 +9,13 @@ Modular, production-grade **Spring Boot 3.3.x (Java)** RESTful backend implement
 - **PDF Rendering**: Thymeleaf + Flying Saucer / OpenPDF (`%PDF-1.x`) + HMAC-SHA256 Pre-Signed URLs
 - **Observability & Docs**: Springdoc OpenAPI 3 (`/v3/api-docs`, `/swagger-ui.html`), Actuator + Micrometer Prometheus (`/actuator/health`, `/actuator/prometheus`)
 
+## Architecture & Documentation
+- **[Entity Relationship Diagram (ERD)](ERD.md)**: Full Mermaid diagram and table summaries for all 20 relational schema tables.
+- **[Flyway Migration SQL](src/main/resources/db/migration/V1__init_gdg_dashboard_schema.sql)**: Production DDL schema.
+
 ## Quick Start
 ```bash
 mvn clean test
 mvn spring-boot:run
 ```
+
