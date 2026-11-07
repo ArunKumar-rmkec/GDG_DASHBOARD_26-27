@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="${title}">GDGoC Official Letter</title>
+    <style type="text/css">
+        body { font-family: Helvetica, Arial, sans-serif; margin: 40px; color: #202124; line-height: 1.6; }
+        .header { border-bottom: 3px solid #4285F4; padding-bottom: 16px; margin-bottom: 24px; }
+        .brand { font-size: 20px; font-weight: bold; color: #4285F4; }
+        .subtitle { font-size: 12px; color: #5f6368; }
+        .title { font-size: 18px; font-weight: bold; margin: 20px 0 12px 0; color: #1a73e8; }
+        .meta { font-size: 12px; color: #3c4043; margin-bottom: 20px; }
+        .content { font-size: 13px; margin: 24px 0; white-space: pre-line; }
+        .footer { margin-top: 48px; border-top: 1px solid #dadce0; padding-top: 12px; font-size: 11px; color: #5f6368; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">Google Developer Groups on Campus (GDGoC)</div>
+        <div class="subtitle">Official Chapter Document &#8212; 2026-2027 Tenure</div>
+    </div>
+    <div class="title" th:text="${title}">Official Letter</div>
+    <div class="meta">
+        <div><strong>Recipient:</strong> <span th:text="${memberName}">Member Name</span> (<span th:text="${memberEmail}">email@gdgoc.edu</span>)</div>
+        <div><strong>Letter Type:</strong> <span th:text="${letterType}">APPOINTMENT</span></div>
+        <div><strong>Issued At:</strong> <span th:text="${issuedAt}">2026-11-07</span></div>
+    </div>
+    <div class="content" th:text="${contentText}">Letter body content</div>
+    <div class="footer">
+        <div>Issued by GDGoC Campus Administration | Verified Digital Record</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="${title}">Project Contributor Agreement</title>
+    <style type="text/css">
+        body { font-family: Helvetica, Arial, sans-serif; margin: 40px; color: #202124; line-height: 1.5; }
+        .header { border-bottom: 3px solid #34A853; padding-bottom: 14px; margin-bottom: 20px; }
+        .brand { font-size: 20px; font-weight: bold; color: #34A853; }
+        .title { font-size: 18px; font-weight: bold; margin: 16px 0; }
+        .content { font-size: 12px; margin: 20px 0; padding: 14px; border: 1px solid #dadce0; background-color: #f8f9fa; }
+        .signature-box { margin-top: 30px; padding: 14px; border: 1px solid #34A853; }
+        .sig-line { font-size: 13px; font-weight: bold; color: #137333; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">GDGoC Project Contributor Agreement (PCA)</div>
+        <div>Version: <span th:text="${version}">2026.1</span></div>
+    </div>
+    <div class="title" th:text="${title}">Agreement Title</div>
+    <div class="content" th:text="${contentText}">Agreement Terms</div>
+    <div class="signature-box">
+        <div><strong>Contributor:</strong> <span th:text="${memberName}">Member Name</span> (<span th:text="${memberEmail}">email@gdgoc.edu</span>)</div>
+        <div class="sig-line"><strong>Digital Signature:</strong> <span th:text="${signatureText}">Signed</span></div>
+        <div><strong>Signed At:</strong> <span th:text="${signedAt}">2026-11-07T01:00:00Z</span></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:gdg_dashboard;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  health:
+    mail:
+      enabled: false
+
+app:
+  jwt:
+    secret: gdgoc-test-jwt-secret-key-for-automated-integration-tests-minimum-64-bytes-long
+    expiration-ms: 86400000
+  storage:
+    local-dir: ./target/test-storage
+    signing-secret: gdgoc-test-signed-url-hmac-secret-key
+  mail:
+    mock-enabled: true

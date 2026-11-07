@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="${templateTitle}">Certificate of Participation</title>
+    <style type="text/css">
+        body { font-family: Helvetica, Arial, sans-serif; margin: 36px; text-align: center; border: 4px solid #4285F4; padding: 40px; }
+        .brand { font-size: 22px; font-weight: bold; color: #4285F4; margin-bottom: 10px; }
+        .cert-title { font-size: 28px; font-weight: bold; color: #202124; margin: 20px 0; }
+        .recipient { font-size: 24px; font-weight: bold; color: #EA4335; margin: 18px 0; border-bottom: 2px solid #FBBC05; display: inline-block; padding: 0 24px 6px 24px; }
+        .event-info { font-size: 15px; color: #3c4043; margin: 20px 0; }
+        .code { font-size: 11px; color: #5f6368; margin-top: 36px; }
+    </style>
+</head>
+<body>
+    <div class="brand">Google Developer Groups on Campus</div>
+    <div class="cert-title" th:text="${templateTitle}">Certificate of Participation</div>
+    <div>This certificate is proudly presented to</div>
+    <div class="recipient" th:text="${recipientName}">Participant Name</div>
+    <div class="event-info">
+        for participating in <strong th:text="${eventName}">GDGoC Event</strong>
+        held on <span th:text="${eventDate}">2026-11-20</span>
+    </div>
+    <div class="code">
+        Certificate Verification Code: <strong th:text="${certificateCode}">GDGOC-CERT-001</strong>
+    </div>
+</body>
+</html>

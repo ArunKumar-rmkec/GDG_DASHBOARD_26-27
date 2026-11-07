@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: gdg-dashboard-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  mail:
+    host: ${SMTP_HOST:localhost}
+    port: ${SMTP_PORT:2525}
+    username: ${SMTP_USERNAME:gdgoc-noreply@campus.edu}
+    password: ${SMTP_PASSWORD:secret}
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+    include-binding-errors: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  health:
+    mail:
+      enabled: false
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:gdgoc-campus-dashboard-2026-2027-super-secret-signing-key-at-least-64-bytes-long}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  storage:
+    local-dir: ${STORAGE_LOCAL_DIR:./data/storage}
+    signing-secret: ${STORAGE_SIGNING_SECRET:gdgoc-signed-url-hmac-secret-key-2026-2027}
+  mail:
+    mock-enabled: ${MAIL_MOCK_ENABLED:true}
