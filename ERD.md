@@ -7,9 +7,14 @@ The backend relational schema consists of **20 tables** grouped into 5 functiona
 4. **Task Assigning & Tracking Core** (`tasks`, `task_progress_logs`)
 5. **Events, Certificates & Mailing** (`events`, `event_leads`, `event_attendances`, `certificates`, `email_dispatch_logs`)
 
+## Visual Architecture Diagram
+
+![GDGoC Campus Dashboard Database ERD](erd.png)
+
 ---
 
 ## 1. Complete Mermaid ERD
+
 
 ```mermaid
 erDiagram
